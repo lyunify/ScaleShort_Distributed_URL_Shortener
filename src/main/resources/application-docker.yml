@@ -1,0 +1,18 @@
+# Docker/Cloud profile - uses environment variables
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      ssl:
+        enabled: ${REDIS_SSL_ENABLED:false}
+
+app:
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+
+logging:
+  level:
+    com.scaleshort: INFO
+    org.springframework.data.redis: INFO
+    io.lettuce: INFO

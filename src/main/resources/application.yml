@@ -1,0 +1,72 @@
+spring:
+  application:
+    name: scaleshort
+
+  # Default: Standalone Redis (for local development / demo)
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      ssl:
+        enabled: ${REDIS_SSL_ENABLED:false}
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 4
+          min-idle: 2
+
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=10000,expireAfterWrite=10m
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+  tomcat:
+    threads:
+      max: 200
+      min-spare: 10
+    connection-timeout: 20000ms
+    accept-count: 100
+
+app:
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+  default-ttl-seconds: ${DEFAULT_TTL_SECONDS:2592000}  # 30 days
+
+cache:
+  caffeine:
+    max-size: ${CAFFEINE_MAX_SIZE:10000}
+    expire-after-write-minutes: ${CAFFEINE_EXPIRE_MINUTES:10}
+    negative-cache-expire-seconds: ${NEGATIVE_CACHE_EXPIRE:60}
+
+ratelimit:
+  requests-per-minute: ${RATE_LIMIT_PER_MINUTE:60}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: ${spring.application.name}
+
+logging:
+  level:
+    com.scaleshort: INFO
+    org.springframework.data.redis: INFO
+    io.lettuce: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%level] %msg%n"
