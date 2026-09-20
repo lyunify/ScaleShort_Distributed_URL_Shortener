@@ -11,7 +11,7 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 # Copy the jar file and entrypoint script
-COPY --from=build /app/build/libs/scaleshort-1.0.0.jar app.jar
+COPY --from=build /app/build/libs/shorto-1.0.0.jar app.jar
 COPY docker-entrypoint.sh /app/docker-entrypoint.sh
 RUN chmod +x /app/docker-entrypoint.sh
 

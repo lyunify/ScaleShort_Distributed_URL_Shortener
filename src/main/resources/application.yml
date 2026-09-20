@@ -1,8 +1,8 @@
 spring:
   application:
-    name: scaleshort
+    name: shorto
 
-  # Default: Standalone Redis (for local development / demo)
+  # Default: Standalone Redis (for local development)
   data:
     redis:
       host: ${REDIS_HOST:localhost}
@@ -65,7 +65,7 @@ management:
 
 logging:
   level:
-    com.scaleshort: INFO
+    com.shorto: INFO
     org.springframework.data.redis: INFO
     io.lettuce: INFO
   pattern:

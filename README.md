@@ -2,61 +2,15 @@
 
 A High-Performance Distributed **URL Shortening Service**
 
-**Live Demo:** [https://s.example.com/](https://s.example.com/) (The service down, will come back soon)
+## Run on macOS
 
----
+Shorto runs locally with Java 17, Spring Boot, and a standalone Redis instance.
 
-## Demo
+See [the macOS setup guide](MACOS_SETUP.md) for prerequisites, installation, startup, and troubleshooting.
 
-https://github.com/user-attachments/assets/demo.mp4
+After startup, open **http://localhost:8080** to use Shorto.
 
-> *If the video doesn't load, see [docs/demo.mp4](docs/demo.mp4)*
-
----
-
-
-## Quick Start
-
-### Prerequisites
-- **Java 17+**
-- **Redis** (standalone for demo, cluster for production)
-
-### 1. Install Redis
-
-**Ubuntu/Debian:**
-```bash
-sudo apt-get update && sudo apt-get install -y redis-server
-sudo systemctl start redis
-redis-cli ping  # Should return: PONG
-```
-
-**macOS:**
-```bash
-brew install redis
-brew services start redis
-```
-
-**Windows (WSL):**
-```bash
-sudo apt-get install redis-server
-sudo service redis-server start
-```
-
-### 2. Build & Run
-
-```bash
-# Build the project
-./gradlew clean build
-
-# Run the application
-java -jar build/libs/scaleshort-1.0.0.jar
-```
-
-### 3. Open Browser
-
-Visit: **http://localhost:8080**
-
-
+The separate [Shorto presentation](shorto-presentation/README.md) explains the architecture and design. It runs at **http://localhost:3000** and is maintained independently of the application's user interface.
 
 ## System Architecture
 
@@ -145,3 +99,7 @@ Optimized for high-speed read/write operations using Redis key-value store with 
 ## Author
 
 Yun Li ([yunify.cs@gmail.com](mailto:yunify.cs@gmail.com))
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

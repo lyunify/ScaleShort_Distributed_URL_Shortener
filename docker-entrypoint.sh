@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "Starting ScaleShort with Redis configuration:"
+echo "Starting Shorto with Redis configuration:"
 echo "REDIS_HOST=${REDIS_HOST:-not set}"
 echo "REDIS_PORT=${REDIS_PORT:-not set}"
 echo "REDIS_SSL_ENABLED=${REDIS_SSL_ENABLED:-not set}"

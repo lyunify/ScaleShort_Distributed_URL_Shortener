@@ -1,4 +1,4 @@
-# Docker/Cloud profile - uses environment variables
+# Docker profile - uses environment variables
 spring:
   data:
     redis:
@@ -13,6 +13,6 @@ app:
 
 logging:
   level:
-    com.scaleshort: INFO
+    com.shorto: INFO
     org.springframework.data.redis: INFO
     io.lettuce: INFO

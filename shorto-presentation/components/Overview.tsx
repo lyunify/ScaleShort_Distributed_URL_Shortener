@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from './ui/Section';
-import { Server, Database, Container } from 'lucide-react';
+import { Server, Database, Monitor } from 'lucide-react';
 
 export const Overview: React.FC = () => {
   return (
@@ -23,8 +23,8 @@ export const Overview: React.FC = () => {
               <span className="text-slate-300 text-sm">Redis</span>
             </div>
             <div className="flex items-center gap-2">
-              <Container size={16} className="text-primary-400" />
-              <span className="text-slate-300 text-sm">Docker / Azure</span>
+              <Monitor size={16} className="text-primary-400" />
+              <span className="text-slate-300 text-sm">macOS / Docker</span>
             </div>
           </div>
         </div>

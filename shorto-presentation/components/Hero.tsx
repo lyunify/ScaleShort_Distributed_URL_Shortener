@@ -1,6 +1,5 @@
 import React from 'react';
-import { ArrowDown, ArrowRight } from 'lucide-react';
-import demoVideo from '../pic/demoVideo.mp4';
+import { ArrowDown } from 'lucide-react';
 import toolongImg from '../pic/toolong.jpg';
 
 export const Hero: React.FC = () => {
@@ -36,27 +35,6 @@ export const Hero: React.FC = () => {
           A High-Performance Distributed <span className="text-indigo-600 font-semibold">URL Shortener</span>
         </p>
 
-        {/* Demo Video */}
-        <div className="mt-10 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 w-full">
-          <video
-            src={demoVideo}
-            controls
-            autoPlay
-            muted
-            loop
-            className="w-full h-auto"
-          />
-        </div>
-
-        {/* Live URL */}
-        <a
-          href="https://s.example.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent hover:from-indigo-500 hover:to-purple-500 transition-all"
-        >
-          https://s.example.com/
-        </a>
 
       </div>
 

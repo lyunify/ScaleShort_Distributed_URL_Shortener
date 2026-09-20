@@ -4,7 +4,7 @@ import { Overview } from './components/Overview';
 import { Architecture } from './components/Architecture';
 import { Flows } from './components/Flows';
 import { CollisionHandling } from './components/CollisionHandling';
-import { CloudDeployment } from './components/CloudDeployment';
+import { LocalDeployment } from './components/LocalDeployment';
 import { StorageAndDeploy } from './components/StorageAndDeploy';
 import { Future } from './components/Future';
 
@@ -16,7 +16,7 @@ function App() {
         <Hero />
         <Overview />
         <Architecture />
-        <CloudDeployment />
+        <LocalDeployment />
         <Flows />
         <StorageAndDeploy />
         <CollisionHandling />

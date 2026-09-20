@@ -64,7 +64,7 @@ export const Future: React.FC = () => {
 
         <div className="mt-24 text-center border-t border-slate-800 pt-12">
           <p className="text-2xl font-semibold text-white mb-6">Thank you!</p>
-          <p className="text-slate-500 text-sm">&copy; 2025 Zhifei Ye</p>
+          <p className="text-slate-500 text-sm">&copy; 2025 Yun Li</p>
         </div>
       </div>
     </Section>

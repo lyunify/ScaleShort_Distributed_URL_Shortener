@@ -1,4 +1,4 @@
-# ScaleShort Architecture
+# Shorto Architecture
 
 ## System Architecture
 
@@ -205,8 +205,8 @@ Input: "https://example.com/very/long/url"
 │                         Deployment                               │
 ├─────────────────────────────────────────────────────────────────┤
 │  Docker          │  Containerization                            │
-│  Azure Container │  Cloud Platform                              │
-│  Apps            │                                              │
+│  macOS           │  Local Runtime Environment                   │
+│  Java + Redis    │  Local Application and Storage               │
 └─────────────────────────────────────────────────────────────────┘
 ```
 

@@ -8,7 +8,7 @@ services:
     volumes:
       - redis-data-1:/data
     networks:
-      - scaleshort-network
+      - shorto-network
 
   redis-node-2:
     image: redis:7-alpine
@@ -16,7 +16,7 @@ services:
     volumes:
       - redis-data-2:/data
     networks:
-      - scaleshort-network
+      - shorto-network
 
   redis-node-3:
     image: redis:7-alpine
@@ -24,7 +24,7 @@ services:
     volumes:
       - redis-data-3:/data
     networks:
-      - scaleshort-network
+      - shorto-network
 
   redis-node-4:
     image: redis:7-alpine
@@ -32,7 +32,7 @@ services:
     volumes:
       - redis-data-4:/data
     networks:
-      - scaleshort-network
+      - shorto-network
 
   redis-node-5:
     image: redis:7-alpine
@@ -40,7 +40,7 @@ services:
     volumes:
       - redis-data-5:/data
     networks:
-      - scaleshort-network
+      - shorto-network
 
   redis-node-6:
     image: redis:7-alpine
@@ -48,7 +48,7 @@ services:
     volumes:
       - redis-data-6:/data
     networks:
-      - scaleshort-network
+      - shorto-network
 
   # Redis cluster init
   redis-cluster-init:
@@ -73,10 +73,10 @@ services:
       --cluster-replicas 1 --cluster-yes
       "
     networks:
-      - scaleshort-network
+      - shorto-network
 
-  # ScaleShort Application
-  scaleshort:
+  # Shorto Application
+  shorto:
     build:
       context: .
       dockerfile: Dockerfile
@@ -90,7 +90,7 @@ services:
     depends_on:
       - redis-cluster-init
     networks:
-      - scaleshort-network
+      - shorto-network
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
       interval: 30s
@@ -99,7 +99,7 @@ services:
       start_period: 40s
 
 networks:
-  scaleshort-network:
+  shorto-network:
     driver: bridge
 
 volumes:
