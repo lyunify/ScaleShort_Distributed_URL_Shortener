@@ -2,6 +2,8 @@
 
 A High-Performance Distributed **URL Shortening Service**
 
+![Shorto generating a short link from a long URL](docs/shorto-demo.png)
+
 ## Run on macOS
 
 Shorto runs locally with Java 17, Spring Boot, and a standalone Redis instance.
